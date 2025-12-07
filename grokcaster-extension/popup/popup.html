@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Grokcaster</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      width: 260px;
+      background: #141414;
+      color: #fff;
+      padding: 20px;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .star {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      background: #fff;
+      border-radius: 50%;
+      opacity: 0.4;
+      animation: twinkle 3s infinite;
+    }
+    
+    @keyframes twinkle {
+      0%, 100% { opacity: 0.2; }
+      50% { opacity: 0.6; }
+    }
+    
+    .header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 12px;
+      position: relative;
+      z-index: 1;
+    }
+    
+    .logo {
+      width: 26px;
+      height: 26px;
+    }
+    
+    .logo svg {
+      width: 100%;
+      height: 100%;
+      fill: #fff;
+    }
+    
+    .title {
+      font-size: 16px;
+      font-weight: 600;
+      letter-spacing: -0.3px;
+    }
+    
+    .desc {
+      color: rgba(255, 255, 255, 0.5);
+      font-size: 12px;
+      margin-bottom: 20px;
+      line-height: 1.5;
+      position: relative;
+      z-index: 1;
+    }
+    
+    .btn {
+      width: 100%;
+      padding: 12px;
+      background: #fff;
+      border: none;
+      border-radius: 8px;
+      color: #000;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      font-family: inherit;
+      transition: opacity 0.15s;
+      position: relative;
+      z-index: 1;
+    }
+    
+    .btn:hover {
+      opacity: 0.9;
+    }
+    
+    .hint {
+      margin-top: 12px;
+      text-align: center;
+      color: rgba(255, 255, 255, 0.3);
+      font-size: 11px;
+      position: relative;
+      z-index: 1;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div class="logo">
+      <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+        <path d="M50 5C25.1 5 5 25.1 5 50s20.1 45 45 45 45-20.1 45-45S74.9 5 50 5zm0 10c19.3 0 35 15.7 35 35S69.3 85 50 85 15 69.3 15 50s15.7-35 35-35z"/>
+        <path d="M50 20c-16.5 0-30 13.5-30 30s13.5 30 30 30c5.5 0 10.7-1.5 15.1-4.1L42.6 53.4c-1.9-1.9-1.9-5 0-6.9s5-1.9 6.9 0l22.4 22.4C77.5 62.5 80 56.5 80 50c0-16.5-13.5-30-30-30z"/>
+        <path d="M65 35c-2.8 0-5 2.2-5 5s2.2 5 5 5 5-2.2 5-5-2.2-5-5-5z"/>
+      </svg>
+    </div>
+    <div class="title">Grokcaster</div>
+  </div>
+  
+  <p class="desc">Turn any page into an AI-generated podcast.</p>
+  
+  <button class="btn" id="launch">Open Panel</button>
+  
+  <p class="hint">Or right-click → Generate Grokcaster</p>
+  
+  <script src="popup.js"></script>
+</body>
+</html>

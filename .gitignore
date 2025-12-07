@@ -1,0 +1,15 @@
+# Environment files
+.env
+*.env
+allapikeys.env
+
+# Python
+__pycache__/
+venv/
+*.pyc
+
+# Node
+node_modules/
+
+# OS
+.DS_Store
