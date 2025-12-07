@@ -13,3 +13,12 @@ node_modules/
 
 # OS
 .DS_Store
+
+# PDFs and docs
+*.pdf
+ARCHITECTURE.md
+HACKATHON_TECHNICAL_DEEP_DIVE.txt
+
+# Reference files
+xai-voice-examples-main/
+kuwycuuzjsoe1.jpeg
