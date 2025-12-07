@@ -22,7 +22,31 @@ No OpenAI. No ElevenLabs. No third-party AI. Just Grok.
 - **Duration control** from 45 seconds to 10 minutes
 - **Tone slider** from formal to completely unhinged
 - **Live Talk** for real-time voice conversation with Grok about the page
-- **X integration** (optional) to personalize content based on your Twitter interests
+- **X integration** to personalize content based on your Twitter/X interests
+
+## X API Integration
+
+When you enable "X Personalize" in the extension, Grokcaster fetches data from your Twitter/X account to customize the podcast:
+
+**What we fetch:**
+- Your bio/description
+- Your recent liked tweets (up to 10)
+
+**How it works:**
+We call the Twitter API v2 endpoints:
+- `GET https://api.twitter.com/2/users/me` for your profile
+- `GET https://api.twitter.com/2/users/{id}/liked_tweets` for your likes
+
+From your likes, we extract topics and themes you care about. If you've been liking tweets about AI, startups, or basketball, the podcast will naturally weave in those interests when relevant.
+
+**Example:** You're reading an article about apartments in Austin. With X personalization enabled, the podcast might say:
+
+> ALEX: This neighborhood looks perfect for someone in tech.
+> SAM: Exactly, it's a 10 minute drive to the startup corridor.
+
+Instead of generic commentary, you get content that connects to what you actually care about.
+
+**Influence slider:** Controls how heavily your X interests affect the output. Set it to minimal for subtle references, or strong to make your interests a central part of the conversation.
 
 ## How it works
 
@@ -52,8 +76,10 @@ Create a `.env` file:
 
 ```
 XAI_API_KEY=your_xai_api_key
-X_BEARER_TOKEN=your_twitter_bearer_token  # optional
+X_BEARER_TOKEN=your_twitter_bearer_token
 ```
+
+Get your xAI API key at [x.ai](https://x.ai). For X personalization, you need a Twitter/X Bearer Token from the [Twitter Developer Portal](https://developer.twitter.com/).
 
 Run the server:
 
@@ -116,7 +142,7 @@ This project uses three xAI endpoints:
 - `POST https://api.x.ai/v1/audio/speech` (text to speech)
 - `WSS wss://api.x.ai/v1/realtime` (live voice)
 
-You need an xAI API key. Get one at [x.ai](https://x.ai).
+You need an xAI API key from [x.ai](https://x.ai).
 
 ## Why I built this
 
