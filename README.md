@@ -2,6 +2,8 @@
 
 Turn any webpage into a podcast. Grokcaster is a Chrome extension that reads the page you're on and generates a two-host audio conversation about it, completely powered by xAI's Grok.
 
+Live Youtube demo: https://www.youtube.com/watch?v=sRLpiC4mraE
+
 ## What it does
 
 You're reading an article. You don't have time to finish it. Click the extension, hit generate, and Grokcaster creates a short podcast where two AI hosts (Alex and Sam) discuss the content in a natural back-and-forth conversation. Plug in your headphones and listen while you do something else.
